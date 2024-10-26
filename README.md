@@ -15,18 +15,24 @@ The second loop applies this watering check for each weekday, except on Saturday
 
 The outermost loop repeats this process 12 times to create a schedule for 12 weeks.
 
+The program has two functions:
+
+- Finding the Next Monday: The function get_next_monday() is essential as it determines the starting point for the schedule, which begins on the next Monday. Using Python’s datetime library, it calculates the upcoming Monday based on today’s date.
+
+- Creating the Schedule: The main schedule() function uses get_next_monday() to set the first date in the plan. From there, it iterates through each day for the next 12 weeks, adjusting plant watering frequencies and marking weekends as non-watering days. Each date is formatted and logged in the schedule.
+
 ## How to run:
 
 To run the program, simply execute the Python file named plant-watering-system.py. It will complete without outputting anything in the command line. Once the program has finished, close it and open the plan.txt file, which will now contain the entire schedule.
 
 ## Requirements:
 
-- The user should easily view which plants need watering on which day.
+- The user should easily view which plants need watering on which date(s).
 - The schedule begins on the upcoming Monday and extends for 12 weeks.
 - No watering takes place on weekends (Saturdays and Sundays).
 - Each plant is watered according to its individual watering frequency, while respecting weekends.
 
 ## Future Improvements:
 
-- Incorporate Python libraries to add specific dates and times to the schedule, taking into account February's 28 days (or 29 in a leap year), making the program more realistic and foolproof for real-life use.
 - Improve the layout and display of the watering schedule, for example, by using an interface which shows a water droplet icon when needing water.
+- Add watering limit tracker where the plant caretaker can only water a maximum of three plants per day.
